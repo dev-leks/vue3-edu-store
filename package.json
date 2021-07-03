@@ -1,0 +1,24 @@
+{
+  "name": "vue3-edu-store",
+  "version": "1.0.0",
+  "description": "Vue 3 Store app",
+  "scripts": {
+    "build": "webpack --progress",
+    "dev": "webpack --watch"
+  },
+  "author": "Aleksandr Drobot",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@vue/compiler-sfc": "^3.1.2",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.6",
+    "vue-loader": "^16.2.0",
+    "vue-style-loader": "^4.1.3",
+    "webpack": "^5.41.1",
+    "webpack-cli": "^4.7.2"
+  }
+}
