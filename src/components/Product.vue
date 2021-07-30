@@ -27,12 +27,23 @@
 <script>
 export default {
   name: "Product",
-  data: () => ({
-    name: "Apple MacBook Pro 13-inch Space Gray Late 2020 (Apple Silicon M1, 16GB RAM, 256GB SSD)",
-    category: "Computer & Accessories",
-    price: 1499,
-    image: "/img/macbook-pro.jpeg",
-    is_available: true,
-  }),
+  props: {
+    name: {
+      type: String,
+      isRequired: true,
+    },
+    category: {
+      type: String,
+    },
+    price: {
+      type: Number,
+    },
+    image: {
+      type: String,
+    },
+    isAvailable: {
+      type: Boolean,
+    },
+  },
 }
 </script>

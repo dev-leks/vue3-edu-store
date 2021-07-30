@@ -29,66 +29,7 @@
   </nav>
 
   <main>
-    <!-- ProductsList component -->
-    <div class="container">
-      <div class="card my-5 shadow">
-        <div class="card-body">
-          <div class="row">
-
-            <!-- Product component -->
-            <div class="col-md-6 col-lg-4 py-3">
-              <div class="card py-3">
-                <img class="card-img-top" src="./img/macbook-pro.jpeg" alt="macbook-pro">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    Apple MacBook Pro 13" Space Gray Late 2020 (Apple Silicon M1, 16GB RAM, 256GB SSD)
-                  </h5>
-                  <p class="card-subtitle mt-2 mb-3">
-                    Computer & Accessories
-                  </p>
-                  <h5 class="fs-3 text-success">
-                    $1499
-                  </h5>
-                  <p class="mt-3">
-                    Stock:
-                    <strong class="text-success">Available</strong>
-                  </p>
-                  <button class="btn btn-success w-100 shadow-none">
-                    Add to cart
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Product component (out of stock) -->
-            <div class="col-md-6 col-lg-4 py-3">
-              <div class="card py-3">
-                <img class="card-img-top" src="./img/imac.jpeg" alt="imac">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    Apple iMac 21.5 with Retina 4K display 2019
-                  </h5>
-                  <p class="card-subtitle mt-2 mb-3">
-                    Computer & Accessories
-                  </p>
-                  <h5 class="fs-3 text-secondary">
-                    $1299
-                  </h5>
-                  <p class="mt-3">
-                    Stock:
-                    <strong class="text-danger">Sold out</strong>
-                  </p>
-                  <button class="btn btn-secondary w-100 shadow-none" disabled>
-                    Add to cart
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
+    <products-list></products-list>
   </main>
 
   <!-- CartModal component -->
