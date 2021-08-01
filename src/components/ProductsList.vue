@@ -26,22 +26,20 @@ export default {
     Product,
   },
   data: () => ({
-    products: [
-      {
-        name: "Apple MacBook Pro 13-inch Space Gray Late 2020 (Apple Silicon M1, 16GB RAM, 256GB SSD)",
-        category: "Computer & Accessories",
-        price: 1499,
-        image: "./img/macbook-pro.jpeg",
-        is_available: true,
-      },
-      {
-        name: "Apple iMac 21.5 with Retina 4K display 2019",
-        category: "Computer & Accessories",
-        price: 1299,
-        image: "./img/imac.jpeg",
-        is_available: false,
-      }
-    ],
+    products: [],
   }),
+  mounted() {
+    this.fetchProducts();
+  },
+  methods: {
+    async fetchProducts() {
+      try {
+        const response = await fetch("http://localhost:3000/products");
+        this.products = await response.json();
+      } catch (e) {
+        console.error("Fetching error");
+      }
+    },
+  },
 }
 </script>

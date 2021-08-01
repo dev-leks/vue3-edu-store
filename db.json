@@ -1,0 +1,20 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "name": "Apple MacBook Pro 13-inch Space Gray Late 2020 (Apple Silicon M1, 16GB RAM, 256GB SSD)",
+      "category": "Computer & Accessories",
+      "price": 1499,
+      "image": "./img/macbook-pro.jpeg",
+      "is_available": true
+    },
+    {
+      "id": 1,
+      "name": "Apple iMac 21.5 with Retina 4K display 2019",
+      "category": "Computer & Accessories",
+      "price": 1299,
+      "image": "./img/imac.jpeg",
+      "is_available": false
+    }
+  ]
+}
