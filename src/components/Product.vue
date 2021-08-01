@@ -9,14 +9,18 @@
         <p class="card-subtitle mt-2 mb-3">
           {{ category }}
         </p>
-        <h5 class="fs-3 text-success">
+        <h5 :class="`fs-3 ${isAvailable ? 'text-success' : 'text-secondary'}`">
           {{ `$${price}` }}
         </h5>
         <p class="mt-3">
           Stock:
-          <strong class="text-success">Available</strong>
+          <strong v-if="isAvailable" class="text-success">Available</strong>
+          <strong v-else class="text-danger">Sold out</strong>
         </p>
-        <button class="btn btn-success w-100 shadow-none">
+        <button
+            :class="`btn w-100 shadow-none ${isAvailable ? 'btn-success' : 'btn-secondary' }`"
+            :disabled="!isAvailable"
+        >
           Add to cart
         </button>
       </div>
