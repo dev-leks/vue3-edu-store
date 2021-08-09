@@ -6,11 +6,13 @@
           <product
               v-for="product in products"
               :key="product.id"
+              :id="product.id"
               :name="product.name"
               :category="product.category"
               :price="product.price"
               :image="product.image"
               :is-available="product.is_available"
+              @add-to-cart="addProductToCart(product)"
           />
         </div>
       </div>
@@ -39,6 +41,9 @@ export default {
       } catch (e) {
         console.error("Fetching error");
       }
+    },
+    addProductToCart(product) {
+      this.$root.addProductToCart(product);
     },
   },
 }

@@ -18,10 +18,19 @@
           <strong v-else class="text-danger">Sold out</strong>
         </p>
         <button
+            v-if="!addedToCart"
             :class="`btn w-100 shadow-none ${isAvailable ? 'btn-success' : 'btn-secondary' }`"
             :disabled="!isAvailable"
+            @click="$emit('add-to-cart')"
         >
           Add to cart
+        </button>
+        <button
+            v-else
+            class="btn w-100 shadow-none btn-secondary"
+            disabled
+        >
+          Added
         </button>
       </div>
     </div>
@@ -32,6 +41,10 @@
 export default {
   name: "Product",
   props: {
+    id: {
+      type: Number,
+      isRequired: true,
+    },
     name: {
       type: String,
       isRequired: true,
@@ -48,6 +61,11 @@ export default {
     isAvailable: {
       type: Boolean,
     },
+  },
+  computed: {
+    addedToCart() {
+      return !!this.$root.cartProducts.find(({ id }) => id === this.id);
+    }
   },
 }
 </script>
