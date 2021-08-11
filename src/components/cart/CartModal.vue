@@ -18,11 +18,6 @@
             Cart is empty...
           </p>
         </div>
-        <div class="modal-footer">
-          <button :disabled="cartIsEmpty" type="button" class="btn btn-success">
-            Place Order
-          </button>
-        </div>
       </div>
     </div>
   </div>
