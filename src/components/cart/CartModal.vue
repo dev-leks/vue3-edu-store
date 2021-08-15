@@ -32,10 +32,10 @@ export default {
   components: { CartBillingForm, CartProductsList },
   computed: {
     cartIsEmpty() {
-      return !this.$root.cartProducts.length;
+      return this.$store.getters.cartIsEmpty;
     },
     totalAmount() {
-      return this.$root.totalAmount;
+      return this.$store.getters.totalAmount;
     },
   },
 }

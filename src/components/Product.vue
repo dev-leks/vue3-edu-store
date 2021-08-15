@@ -64,7 +64,7 @@ export default {
   },
   computed: {
     addedToCart() {
-      return !!this.$root.cartProducts.find(({ id }) => id === this.id);
+      return !!this.$store.getters.getProductById(this.id);
     }
   },
 }

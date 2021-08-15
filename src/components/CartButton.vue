@@ -13,7 +13,7 @@ export default {
   name: "CartButton",
   computed: {
     productsCount() {
-      return this.$root.totalAmount;
+      return this.$store.getters.totalAmount;
     },
   },
 }

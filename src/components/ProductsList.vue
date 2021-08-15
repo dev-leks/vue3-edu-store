@@ -43,7 +43,7 @@ export default {
       }
     },
     addProductToCart(product) {
-      this.$root.addProductToCart(product);
+      this.$store.commit("addProductToCart", product);
     },
   },
 }
