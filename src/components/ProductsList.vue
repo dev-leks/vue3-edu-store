@@ -21,30 +21,23 @@
 </template>
 
 <script>
+import { mapActions, mapMutations, mapState } from "vuex";
 import Product from "./Product";
+
 export default {
   name: "ProductsList",
   components: {
     Product,
   },
-  data: () => ({
-    products: [],
-  }),
+  computed: {
+    ...mapState(['products']),
+  },
   mounted() {
     this.fetchProducts();
   },
   methods: {
-    async fetchProducts() {
-      try {
-        const response = await fetch("http://localhost:3000/products");
-        this.products = await response.json();
-      } catch (e) {
-        console.error("Fetching error");
-      }
-    },
-    addProductToCart(product) {
-      this.$store.commit("addProductToCart", product);
-    },
+    ...mapActions(['fetchProducts']),
+    ...mapMutations(['addProductToCart']),
   },
 }
 </script>

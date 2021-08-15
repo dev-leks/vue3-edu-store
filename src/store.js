@@ -2,6 +2,7 @@ import { createStore } from "vuex";
 
 const store = createStore({
   state: () => ({
+    products: [],
     cartProducts: [],
   }),
   getters: {
@@ -17,8 +18,21 @@ const store = createStore({
       state.cartProducts.find(({ id }) => productId === id)
     ),
   },
-  actions: {},
+  actions: {
+    async fetchProducts(context) {
+      try {
+        const response = await fetch("http://localhost:3000/products");
+        const products = await response.json();
+        context.commit("setProducts", products);
+      } catch (e) {
+        console.error("Fetching error");
+      }
+    }
+  },
   mutations: {
+    setProducts(state, products) {
+      state.products = products;
+    },
     addProductToCart(state, product) {
       state.cartProducts.push({
         ...product,

@@ -16,9 +16,9 @@
         :price="product.price"
         :image="product.image"
         :amount="product.amount"
-        @increment-amount="$store.commit('incrementProductAmount', index)"
-        @decrement-amount="$store.commit('decrementProductAmount', index)"
-        @remove="$store.commit('removeProductFromCart', index)"
+        @increment-amount="incrementProductAmount(index)"
+        @decrement-amount="decrementProductAmount(index)"
+        @remove="removeProductFromCart(index)"
     />
     </tbody>
     <tfoot>
@@ -34,21 +34,25 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations, mapState } from "vuex";
 import CartProductItem from "./CartProductItem";
 
 export default {
   name: "CartProductsList",
   components: { CartProductItem },
   computed: {
-    cartProducts() {
-      return this.$store.state.cartProducts;
-    },
-    totalAmount() {
-      return this.$store.getters.totalAmount;
-    },
-    totalPrice() {
-      return this.$store.getters.totalPrice;
-    }
+    ...mapState(['cartProducts']),
+    ...mapGetters([
+      'totalAmount',
+      'totalPrice',
+    ]),
   },
+  methods: {
+    ...mapMutations([
+      'incrementProductAmount',
+      'decrementProductAmount',
+      'removeProductFromCart',
+    ]),
+  }
 }
 </script>

@@ -26,17 +26,13 @@
 <script>
 import CartProductsList from "./CartProductsList";
 import CartBillingForm from "./CartBillingForm";
+import { mapGetters } from "vuex";
 
 export default {
   name: "CartModal",
   components: { CartBillingForm, CartProductsList },
   computed: {
-    cartIsEmpty() {
-      return this.$store.getters.cartIsEmpty;
-    },
-    totalAmount() {
-      return this.$store.getters.totalAmount;
-    },
+    ...mapGetters(['cartIsEmpty', 'totalAmount']),
   },
 }
 </script>
