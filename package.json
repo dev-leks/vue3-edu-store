@@ -9,6 +9,7 @@
   "author": "Aleksandr Drobot",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.0.2",
     "vue": "^3.1.2"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 import { createApp } from "vue";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import "./styles.css";
 
-const app = createApp({
-  template: '<h1>Hello, World!</h1>',
-});
+const app = createApp({});
 
 app.mount("#app");
